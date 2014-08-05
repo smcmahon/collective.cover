@@ -6,6 +6,9 @@ There's a frood who really knows where his towel is.
 1.0a10 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Make last row a reserved row, shown on compose and layout, but not view.
+  [smcmahon]
+
 - Fix rendering of cover page outside its context (fixes `#430`_).
   [petschki]
 

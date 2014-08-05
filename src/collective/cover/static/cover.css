@@ -149,3 +149,10 @@ table.invisible{visibility:visible;}
     -webkit-box-shadow: 0 5px 10px #C3C3C3;
     box-shadow: 0 5px 10px #C3C3C3;
 }
+
+.layout .cover-row.reserve-row,
+.row.reserve-row {
+    background-color: rgba(255, 255, 0, 0.2);
+    border-top: 2px dashed;
+    padding-top: 1em;
+}

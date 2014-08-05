@@ -34,6 +34,9 @@ class PageLayout(grok.View):
     def get_layout(self, mode):
         layout = json.loads(self.context.cover_layout)
 
+        if mode == 'view' and len(layout) > 1:
+            layout.pop()
+
         if mode == 'compose' or mode == 'layout_edit':
             self.grid_layout_common(layout)
 
@@ -46,6 +49,8 @@ class PageLayout(grok.View):
         else:
             self.grid_layout_edit(layout)
 
+        if mode != 'view':
+            layout[-1]['class'] += ' reserve-row'
         return layout
 
     def grid_layout_common(self, layout):
