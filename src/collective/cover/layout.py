@@ -106,7 +106,7 @@ class PageLayout(grok.View):
                 section['class'] = '{0} {1}'.format(section.get('class'), css_class)
                 if mode == 'layout_edit':
                     my_tile = self.context.get_tile(section.get('id'))
-                    tile_title = my_tile.data['title']
+                    tile_title = my_tile.data.get('title', '')
                 else:
                     tile_title = ''
                 return self.tile(section=section, mode=mode, tile_url=tile_url, tile_content_title=tile_title)
