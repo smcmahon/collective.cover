@@ -480,6 +480,12 @@ input[type="submit"].btn::-moz-focus-inner {
     text-align: center;
     top: 10px;
 }
+.tile-content-title {
+    font-weight: normal;
+    margin-top: 12px;
+    overflow: hidden;
+    color: #aaa;
+}
 
 .btn-tile {
     float: left;

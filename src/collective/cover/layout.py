@@ -98,14 +98,18 @@ class PageLayout(grok.View):
                 if tile is None:
                     return '<div class="tileNotFound">Could not find tile</div>'
                 tile_url = '{0}/@@{1}/{2}'.format(
-                    self.context.absolute_url(),
+                    self.context.absolute_url(relative=1),
                     section.get('tile-type'),
                     section.get('id'))
                 tile_conf = tile.get_tile_configuration()
                 css_class = tile_conf.get('css_class', '')
                 section['class'] = '{0} {1}'.format(section.get('class'), css_class)
-
-                return self.tile(section=section, mode=mode, tile_url=tile_url)
+                if mode == 'layout_edit':
+                    my_tile = self.context.get_tile(section.get('id'))
+                    tile_title = my_tile.data['title']
+                else:
+                    tile_title = ''
+                return self.tile(section=section, mode=mode, tile_url=tile_url, tile_content_title=tile_title)
         else:
             return self.generalmarkup(section=section, mode=mode)
 

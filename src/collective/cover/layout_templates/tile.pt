@@ -68,6 +68,7 @@
                         tal:attributes="href string:${context/absolute_url}/@@configure-tile/${tile_type}/${tile_id}"
                         ><i class="config-icon"></i></a>
                     <span class="tile-name" tal:content="tile_title" />
+                    <p class="tile-content-title" tal:condition="options/tile_content_title">[<span tal:replace="options/tile_content_title" />]</p>
                 </div>
             </tal:block>
         </tal:layoutedit>
